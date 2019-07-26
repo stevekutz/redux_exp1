@@ -1,5 +1,9 @@
 ## Basic Redux experiments
 
+1) Set up app `create-react-app` app
+2) Add dependencies
+    - yarn add `react-redux redux` 
+
 #### Setup flow
 - add store & Provider to App
 - add folders inside src
