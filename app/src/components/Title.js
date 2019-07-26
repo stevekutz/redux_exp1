@@ -17,6 +17,7 @@ class Title extends React.Component {
     updateTitle = ev => {
         ev.preventDefault();
         this.props.updateTitle(this.state.newTitleText);
+        this.setState({newTitleText: ''});
     }    
 
     render() {
