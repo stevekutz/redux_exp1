@@ -1,4 +1,4 @@
-import {IMPORT_TITLE} from '../actions/actions';
+import {UPDATE_TITLE} from '../actions/actions';
 
 const initialState = {
     title: 'Title from Redux store'

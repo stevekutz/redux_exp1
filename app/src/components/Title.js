@@ -5,7 +5,7 @@ import {updateTitle} from '../actions/actions';
 
 class Title extends React.Component {
     state = {
-        newTitleText: 'start with this'
+        newTitleText: ''
     }
 
     handleChange = ev => {
@@ -29,7 +29,7 @@ class Title extends React.Component {
                 value = {this.state.newTitleText}
                 onChange = {this.handleChange}
                />
-            <button onClick = {this.updateTitle}> Update Title</button>/>
+            <button onClick = {this.updateTitle}> Update Title</button>
             </div>
 
         );

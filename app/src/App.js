@@ -1,7 +1,7 @@
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import ReactDOM from 'reac-dom'
+import ReactDOM from 'react-dom'
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
