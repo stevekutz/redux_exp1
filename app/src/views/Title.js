@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {updateTitle} from '../actions/actions';
+import './views.css'; 
 
 class Title extends React.Component {
     state = {
@@ -22,15 +23,15 @@ class Title extends React.Component {
 
     render() {
         return (
-            <div>
-               <h2> {this.props.title}</h2> 
+            <div className = 'sharedState'> 
+               <h6> <span>Shared gggstate:</span> {this.props.title}</h6> 
                <input 
                 type = 'text'
                 name = 'newTitleText'
                 value = {this.state.newTitleText}
                 onChange = {this.handleChange}
                />
-            <button onClick = {this.updateTitle}> Update Title</button>
+               <button onClick = {this.updateTitle}> Update Title</button>
             </div>
         );
     }

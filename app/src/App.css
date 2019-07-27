@@ -2,3 +2,14 @@
   text-align: center;
 }
 
+.allSharedState{
+  border: 1px solid pink;
+  display: inline-block;
+
+  width: 60%;
+  box-shadow: 0 2px 2px #ccc;
+  padding: 5px;
+  margin: 3px;
+
+
+}

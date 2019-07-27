@@ -1,0 +1,27 @@
+.sharedState{
+    border: 1px solid grey;
+    display: inline-block;
+
+    width: 60%;
+    box-shadow: 0 2px 2px #ccc;
+    padding: 4px;
+    margin: 2px auto;
+
+}
+h6{
+    border: 1px solid red;
+    
+    color: hotpink;
+    margin: 0;
+    padding: 2px;
+    width: 60%;
+    margin: 0 auto;
+}    
+h6 span {
+    color: black;
+}
+
+input, button{
+    width: 50%;
+    margin: 0 auto;
+}
