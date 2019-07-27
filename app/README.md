@@ -6,15 +6,19 @@
 
 ## Setup flow
 
-1) Set up the `store` (obj that holds state tree, e.g. app data)
+1) Set up the `store` (obj that holds state tree, e.g. app data). <Provider/> wraps entire application and `store` is passed into it.
     - Add to index.js
         - `import {createStore} from 'redux';`
         - `import {Provider} from 'react-redux';`
+        - `import rootReducer from './reducers/reducer';`
+
+        - `const store = createStore(rootReducer);`
     - wrap `<App/> in <Provider />`
 
+    - #### pass in `store` as prop
     ````
     ReactDOM.render(
-        <Provider>
+        <Provider store = {store}>
             <App />
         </Provider>, 
     document.getElementById('root'));
@@ -62,27 +66,46 @@
     }
 
     ````
-3)    Use  `conect` as `HOC(Higher Order Component)` to map state to the props of `smart component` using `mapStateToProps`. Different parts of state tree are mapped here.
-````
+3)    Use  `conect` as `HOC(Higher Order Component)` to map state to the props of `smart component` using `mapStateToProps`. Different parts of state tree are mapped here. MSTP(MapStateToProps).  
+
+
     const mapStateToProps = state => {
-        return {
-            // title: state.title
-            titleFromMSTP: state.title // MSTP>>MapStateToProps
+            return {
+                title: state.title
+            };
         };
-    };
-````
-- #### Notice how `function currying (connect is called twice)` is used with `connect`
--
-     1) the `mapStateToProps` function is passed in
-     2)   `action creators` obj passed to props
-````
-    export default connect(
-        mapStateToProps,
-        {updateTitle}   // could be written {updateTitle: 
-    )(Title);
-````
 
 
+    - #### Notice how `function currying (connect is called twice)` is used with `connect`
+    -
+        1) the `mapStateToProps` function is passed in
+        2) `action creators` obj passed to props
+        
+            export default connect(
+                mapStateToProps,
+                {updateTitle}   // could be written {updateTitle: updateTitle}
+            )(Title);
+        
+4) Update App component
+    ````
+    import React from 'react';
+    import './App.css';
+
+    import Title from './components/Title';
+    ````
+    ````
+    function App() {
+    return (
+        <div className="App">
+            <Title />
+        </div>
+    );
+    }
+
+    export default App;
+    ````
+5) Build `actions`(sends data to `store` as obj with `action` and `payload`)
+    - THIS   
 - add store & Provider to App
 - add folders inside src
     - actions - build actions.js
