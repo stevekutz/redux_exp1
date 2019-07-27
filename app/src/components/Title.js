@@ -40,7 +40,8 @@ class Title extends React.Component {
 // 1) Don't FORGET this first
 const mapStateToProps = state => {
     return {
-        title: state.title
+        //title: state.title   BEFORE Combine Reducers
+        title: state.titleReducer.title   // AFTER Combine Reducers
     };
 };
 

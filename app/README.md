@@ -8,10 +8,12 @@
 
 1) Set up the `store` (obj that holds state tree, e.g. app data). <Provider/> wraps entire application and `store` is passed into it.
     - Add to index.js
-        - `import {createStore} from 'redux';`
-        - `import {Provider} from 'react-redux';`
-        - `import rootReducer from './reducers/reducer';`
-        - `const store = createStore(rootReducer);`
+        ````
+        `import {createStore} from 'redux';`
+        `import {Provider} from 'react-redux';`
+        `import rootReducer from './reducers/reducer';`
+        `const store = createStore(rootReducer);`
+        ````
         - `Use this method to allow debugging of store`
         ````
         const store = createStore(
@@ -131,20 +133,57 @@
     ````
 6) Build `reducers`(pure functions that accept `current state` and an `action` and provide a new state).  Each reducer manages a specific part of the app's state. Using the redux `combineReducers()` utility will combine all of the app's reducers into a `single index reducer` and helps manage cleary written code.
     - define titleReducer
-    ````
-    export const UPDATE_TITLE = 'UPDATE_TITLE';
+        ````
+        export const UPDATE_TITLE = 'UPDATE_TITLE';
 
-    export function updateTitle(newTitle) {
-        return{
-            type: UPDATE_TITLE,
-            payload: newTitle,
+        export function updateTitle(newTitle) {
+            return{
+                type: UPDATE_TITLE,
+                payload: newTitle,
+            };
+        }
+        ````
+      - #### Your `smart-component` Title will map the state in as a props using 
+        ````
+        const mapStateToProps = state => {
+            return {
+                title: state.title   BEFORE Combine Reducers
+                // title: state.titleReducer.title   // AFTER Combine Reducers
+            };
         };
-    }
+        ```` 
+      - #### Without using `combineReducers()`, the `src/index.js` will be made aware of the state by importing the reducer that manages that portion of state.
+        ````
+        import rootReducer from './reducers/titleReducer';
+        ````
 
-    ````
     - define rootReducer
-    - #### define as `index.js`. Since this is an `index.js`, we can just leave path as is when we import into our main `src/index.js`  as `./reducers/`instead of `./reducers/index.js`.
-        - 
+        ````
+        import {combineReducers} from 'redux';
+
+        import titleReducer from './titleReducer';
+
+        export default combineReducers({
+            titleReducer
+        });    
+        ````
+
+
+
+    - #### Saving as `index.js` allows us to be just define path as is when we import into our main `src/index.js` since`./reducers/` is equalivalent to `./reducers/index.js`.
+    - ### We REPLACE  original rootReducer import in `.src/index.js` with
+        ````
+        import rootReducer from './reducers';
+        ````
+        - #### Now the `smart-component` Title will map the a specific slice of state in as a props using 
+        ````
+        const mapStateToProps = state => {
+            return {
+                //title: state.title   BEFORE Combine Reducers
+                title: state.titleReducer.title   // AFTER Combine Reducers
+            };
+        };    
+        ````
 
 
 
@@ -152,9 +191,7 @@
 
 
 
-
-
-- add store & Provider to App
+- BLAH BLAH add store & Provider to App
 - add folders inside src
     - actions - build actions.js
     - reducers - build reducers.js

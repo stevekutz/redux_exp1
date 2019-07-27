@@ -1,10 +1,10 @@
 import {UPDATE_TITLE} from '../actions/actions';
 
 const initialState = {
-    title: 'Title from Redux store'
+    title: 'Original Store State'
 };
 
-function reducer (state = initialState, action) {
+function titleReducer (state = initialState, action) {
     switch (action.type) {
         case UPDATE_TITLE:
             return {
@@ -15,4 +15,4 @@ function reducer (state = initialState, action) {
     }
 }
 
-export default reducer;
+export default titleReducer;
