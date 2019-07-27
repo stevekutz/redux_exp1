@@ -11,8 +11,15 @@
         - `import {createStore} from 'redux';`
         - `import {Provider} from 'react-redux';`
         - `import rootReducer from './reducers/reducer';`
-
         - `const store = createStore(rootReducer);`
+        - `Use this method to allow debugging of store`
+        ````
+        const store = createStore(
+        rootReducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ &&  window.__REDUX_DEVTOOLS_EXTENSION__()  
+        );
+        ````
+
     - wrap `<App/> in <Provider />`
 
     - #### pass in `store` as prop
@@ -66,15 +73,15 @@
     }
 
     ````
-3)    Use  `conect` as `HOC(Higher Order Component)` to map state to the props of `smart component` using `mapStateToProps`. Different parts of state tree are mapped here. MSTP(MapStateToProps).  
+3) Use  `conect` as `HOC(Higher Order Component)` to map state to the props of `smart component` using `mapStateToProps`. Different parts of state tree are mapped here. MSTP(MapStateToProps).  
 
-
+    ````
     const mapStateToProps = state => {
             return {
                 title: state.title
             };
-        };
-
+    };
+    ````
 
     - #### Notice how `function currying (connect is called twice)` is used with `connect`
     -
@@ -86,7 +93,7 @@
                 {updateTitle}   // could be written {updateTitle: updateTitle}
             )(Title);
         
-4) Update App component
+4) Update App component to include `Title` `smart component`
     ````
     import React from 'react';
     import './App.css';
@@ -105,7 +112,48 @@
     export default App;
     ````
 5) Build `actions`(sends data to `store` as obj with `action` and `payload`)
-    - THIS   
+    - Define `action type` to avoid typos. 
+    ````
+    export const UPDATE_TITLE = 'UPDATE_TITLE';
+    ````
+    - Define `action creators`(may take take in an argument(data, props, etc.) but ALWAYS returns an `action` )
+    - #### Remember that `actions` is an object that:
+    1) MUST have a `type` property
+    2) should have a `payload` property    
+    ````
+    export const changeTitle = title => {
+        return {
+            type: CHANGE_TITLE,
+            payload: title
+        };
+    };
+
+    ````
+6) Build `reducers`(pure functions that accept `current state` and an `action` and provide a new state).  Each reducer manages a specific part of the app's state. Using the redux `combineReducers()` utility will combine all of the app's reducers into a `single index reducer` and helps manage cleary written code.
+    - define titleReducer
+    ````
+    export const UPDATE_TITLE = 'UPDATE_TITLE';
+
+    export function updateTitle(newTitle) {
+        return{
+            type: UPDATE_TITLE,
+            payload: newTitle,
+        };
+    }
+
+    ````
+    - define rootReducer
+    - #### define as `index.js`. Since this is an `index.js`, we can just leave path as is when we import into our main `src/index.js`  as `./reducers/`instead of `./reducers/index.js`.
+        - 
+
+
+
+
+
+
+
+
+
 - add store & Provider to App
 - add folders inside src
     - actions - build actions.js
