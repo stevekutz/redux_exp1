@@ -32,12 +32,8 @@ class Title extends React.Component {
                />
             <button onClick = {this.updateTitle}> Update Title</button>
             </div>
-
         );
-
-
     }
-
 }
 
 
