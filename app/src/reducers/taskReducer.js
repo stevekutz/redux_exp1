@@ -6,7 +6,7 @@ import {ADD_TASK, TOGGLE_COMPLETE}   from '../actions/actionsTasks';
 const initialState = {
     tasks: [
         {description: 'write code', completed: false, id: 1},
-        {description: 'debug code', completed: false, id: 2},
+        {description: 'debug code', completed: true, id: 2},
     ]
 }
 

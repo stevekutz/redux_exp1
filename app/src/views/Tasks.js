@@ -38,15 +38,15 @@ class Tasks extends Component {
 
         return(
             <div>    
-{/*
+
                 <div className = 'taskListContainer'>
 
 
                     {this.props.tasks.map((taskItem, index) => (
-                        <h7 onClick = { () => this.toggleTask_h(taskItem.id)} key = {taskItem.id}>
+                        <h6 onClick = { () => this.toggleTask_h(taskItem.id)} key = {taskItem.id}>
                             {taskItem.description}
                             {taskItem.completed && <i className="fas fa-atom" />}
-                        </h7>
+                        </h6>
                     ))}
                 </div> 
                 <form>
@@ -57,9 +57,9 @@ class Tasks extends Component {
                         placeholder = 'placeholder'
                     />
                 </form> 
-                <button onClick = {this.addNewTask_h}></button>          
+                <button onClick = {this.addNewTask_h}>Add Task</button>          
 
-                    */}
+
             </div>            
         );
 
@@ -75,7 +75,7 @@ class Tasks extends Component {
 const mapStateToProps = state => {
     return {
         //tasks: state.taskReducer.tasks   // WATCH this wiring to state
-        tasks: state.tasks
+        tasks: state.tasks.tasks
     }
 }
 
