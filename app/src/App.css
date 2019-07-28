@@ -27,6 +27,11 @@ h5 {
 
 .tasksMainContainer h6, h5{
   color: darkblue;
+}
+
+.titleViewContainer{
+  border: 2px solid green;
+  margin: 1px auto;;
 
 
 }

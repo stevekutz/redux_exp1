@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import '../App.css';
+import TitleFC from '../components/TitleFC';
 
 
 class TitleView extends React.Component {
@@ -10,8 +11,9 @@ class TitleView extends React.Component {
 
     render() {
         return (
-            <div>
-                <h6> <span>View: Shared state</span> {this.props.title}</h6>          
+            <div className = "titleViewContainer">
+                <h6> <span>View: Shared state</span> {this.props.title}</h6> 
+                <TitleFC title = {this.props.title}/>         
             </div>
         )
     }

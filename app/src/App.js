@@ -3,7 +3,6 @@ import './App.css';
 
 import Title from './views/Title';
 import TitleView from './views/TitleView';
-import TitleFC from './components/TitleComponent';
 import TitleComponent from './components/TitleComponent';
 
 import Tasks from './views/Tasks';
@@ -17,7 +16,6 @@ function App() {
           <Title />
           <TitleView />
           <TitleComponent />
-          <TitleFC />
         </div>
 
         <div className = 'tasksMainContainer'>
