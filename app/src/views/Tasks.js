@@ -30,19 +30,20 @@ class Tasks extends Component {
         this.props.toggleTask(id);
     }
 
+// {this.props.tasks.map((taskItem, index) => (
 
     // 3) 
     render() {
 
-
+        console.log('Tasks props >> ', this.props);
 
         return(
             <div>    
 
                 <div className = 'taskListContainer'>
 
-
-                    {this.props.tasks.map((taskItem, index) => (
+                {this.props.tasks.map((taskItem, index) => (
+         
                         <h6 onClick = { () => this.toggleTask_h(taskItem.id)} key = {taskItem.id}>
                             {taskItem.description}
                             {taskItem.completed &&     <i className="fas fa-atom" />}
@@ -59,10 +60,10 @@ class Tasks extends Component {
                 </form> 
                 <button onClick = {this.addNewTask_h}>Add Task</button>          
 
-
+ 
             </div>            
         );
-
+              
     }
 
 }
@@ -75,7 +76,8 @@ class Tasks extends Component {
 const mapStateToProps = state => {
     return {
         //tasks: state.taskReducer.tasks   // WATCH this wiring to state
-        tasks: state.tasks.tasks
+         tasks: state.tasks.tasks
+
     }
 }
 
