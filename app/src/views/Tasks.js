@@ -6,7 +6,7 @@ import {addTask, toggleTask} from '../actions/actionsTasks';
 // 1) 
 class Tasks extends Component {
     state = {
-        newTask: 'add something'
+        newTask: ''
     }
 
     changeHandler = ev => {
@@ -21,7 +21,7 @@ class Tasks extends Component {
         this.props.addTask(this.state.newTask);
 
         this.setState({
-            newTask: 'add something else'
+            newTask: ''
         })
 
     }
@@ -45,7 +45,7 @@ class Tasks extends Component {
                     {this.props.tasks.map((taskItem, index) => (
                         <h6 onClick = { () => this.toggleTask_h(taskItem.id)} key = {taskItem.id}>
                             {taskItem.description}
-                            {taskItem.completed && <i className="fas fa-atom" />}
+                            {taskItem.completed &&     <i className="fas fa-atom" />}
                         </h6>
                     ))}
                 </div> 
@@ -54,7 +54,7 @@ class Tasks extends Component {
                         type = 'text'
                         value = {this.state.newTask}
                         onChange = {this.changeHandler}
-                        placeholder = 'placeholder'
+                        placeholder = 'add something'
                     />
                 </form> 
                 <button onClick = {this.addNewTask_h}>Add Task</button>          

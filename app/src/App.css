@@ -15,3 +15,8 @@ h5 {
   color: darkred;
   margin: 1px;
 }
+
+.tasksMainContainer h6, h5{
+  color: darkblue;
+
+}
