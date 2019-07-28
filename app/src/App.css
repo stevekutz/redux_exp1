@@ -16,7 +16,25 @@ h5 {
   margin: 1px;
 }
 
+.tasksMainContainer {
+  border: 1px solid darkblue;
+  box-shadow: 0 4px 4px #cdc;
+  display: flex;
+  flex-direction: column;
+  margin: 2px auto;
+  width: 40%;
+}
+
 .tasksMainContainer h6, h5{
   color: darkblue;
 
+
+}
+
+input{
+  outline-style: none;
+}
+
+.fa-atom{
+  padding-left: 4px;
 }
