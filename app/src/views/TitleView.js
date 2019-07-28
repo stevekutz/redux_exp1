@@ -13,7 +13,7 @@ class TitleView extends React.Component {
         return (
             <div className = "titleViewContainer">
                 <h6> <span>View: Shared state</span> {this.props.title}</h6> 
-                <TitleFC title = {this.props.title}/>         
+                <TitleFC titleprop = {this.props.title}/>         
             </div>
         )
     }
