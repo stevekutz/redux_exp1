@@ -13,7 +13,6 @@ class TitleView extends React.Component {
             <div>
                 <h6> <span>View: Shared state</span> {this.props.title}</h6>          
             </div>
-
         )
     }
 }

@@ -4,7 +4,7 @@
 2) Add dependencies
     - yarn add `react-redux redux` 
 
-## Setup flow
+## Part 1) Demonstrate shared State between components
 
 1) Set up the `store` (obj that holds state tree, e.g. app data). <Provider/> wraps entire application and `store` is passed into it.
     - Add to index.js
@@ -184,6 +184,36 @@
             };
         };    
         ````
+            
+
+
+## Part 2) Demonstrate State between Task List components
+
+1) Set up the `store` (obj that holds state tree, e.g. app data). <Provider/> wraps entire application and `store` is passed into it.
+    - Add to index.js
+        ````
+        `import {createStore} from 'redux';`
+        `import {Provider} from 'react-redux';`
+        `import rootReducer from './reducers/reducer';`
+        `const store = createStore(rootReducer);`
+        ````
+        - `Use this method to allow debugging of store`
+        ````
+        const store = createStore(
+        rootReducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ &&  window.__REDUX_DEVTOOLS_EXTENSION__()  
+        );
+        ````
+
+    - wrap `<App/> in <Provider />`
+
+
+
+
+
+
+
+
 
 
 

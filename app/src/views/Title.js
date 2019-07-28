@@ -24,14 +24,14 @@ class Title extends React.Component {
     render() {
         return (
             <div className = 'sharedState'> 
-               <h6> <span>Shared gggstate:</span> {this.props.title}</h6> 
+               <h6> <span>Shared state:</span> {this.props.title}</h6> 
                <input 
                 type = 'text'
                 name = 'newTitleText'
                 value = {this.state.newTitleText}
                 onChange = {this.handleChange}
                />
-               <button onClick = {this.updateTitle}> Update Title</button>
+               <button onClick = {this.updateTitle}> Update title</button>
             </div>
         );
     }

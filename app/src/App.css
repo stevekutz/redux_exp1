@@ -3,13 +3,15 @@
 }
 
 .allSharedState{
-  border: 1px solid pink;
+  border: 1px solid darkred;
   display: inline-block;
-
-  width: 60%;
   box-shadow: 0 2px 2px #ccc;
   padding: 5px;
   margin: 3px;
+  height: 40%;
+}
 
-
+h5 {
+  color: darkred;
+  margin: 1px;
 }
