@@ -16,6 +16,7 @@ function taskReducer(state = initialState, action) {
             return {
                 ...state,
                 tasks: [
+                    ...state.tasks,
                     {description: action.payload, completed: false, id: Date.now() }
                 ]    
             }
