@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {updateTitle} from '../actions/actions';
+import {updateTitle} from '../actions/actionsTitle';
 import './views.css'; 
 
 class Title extends React.Component {
@@ -31,7 +31,7 @@ class Title extends React.Component {
                 value = {this.state.newTitleText}
                 onChange = {this.handleChange}
                />
-               <button onClick = {this.updateTitle}> Update title</button>
+               <button onClick = {this.updateTitle}> Update Title</button>
             </div>
         );
     }

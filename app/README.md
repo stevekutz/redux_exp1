@@ -167,7 +167,18 @@
             titleReducer
         });    
         ````
+7) Adding the following to either class components or functional components allows access of shared state via `this.props.title`
+    ````
+    const mapStateToProps = state => {
+        return {
+            title: state.titleReducer.title
+        };
+    };
 
+    export default connect(
+        mapStateToProps
+    )(TitleView);
+    ````
 
 
     - #### Saving as `index.js` allows us to be just define path as is when we import into our main `src/index.js` since`./reducers/` is equalivalent to `./reducers/index.js`.
@@ -184,10 +195,13 @@
             };
         };    
         ````
-            
+
 
 
 ## Part 2) Demonstrate State between Task List components
+
+
+
 
 1) Set up the `store` (obj that holds state tree, e.g. app data). <Provider/> wraps entire application and `store` is passed into it.
     - Add to index.js

@@ -1,4 +1,4 @@
-import {UPDATE_TITLE} from '../actions/actions';
+import {UPDATE_TITLE} from '../actions/actionsTitle';
 
 const initialState = {
     title: 'Original Store State'
