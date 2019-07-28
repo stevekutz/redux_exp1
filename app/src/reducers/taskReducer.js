@@ -16,7 +16,7 @@ function taskReducer(state = initialState, action) {
             return {
                 ...state,
                 tasks: [
-                    {description: action.payload, completed, id: Date.now() }
+                    {description: action.payload, completed: false, id: Date.now() }
                 ]    
             }
         
@@ -24,7 +24,7 @@ function taskReducer(state = initialState, action) {
             return {
                 ...state,
                 tasks: state.tasks.map(item => {
-                    if(item.id === payload.id) {
+                    if(item.id === action.payload) {
                         return {
                             ...item,
                             completed: !item.completed
@@ -34,7 +34,6 @@ function taskReducer(state = initialState, action) {
                     }         
                 })
             }
-
 
         default: 
             return state;

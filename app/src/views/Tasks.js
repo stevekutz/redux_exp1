@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {addTask, toggleTask} from '../actions';
+import {addTask, toggleTask} from '../actions/actionsTasks';
 
 // 1) 
 class Tasks extends Component {
@@ -33,9 +33,15 @@ class Tasks extends Component {
 
     // 3) 
     render() {
+
+
+
         return(
             <div>    
+{/*
                 <div className = 'taskListContainer'>
+
+
                     {this.props.tasks.map((taskItem, index) => (
                         <h7 onClick = { () => this.toggleTask_h(taskItem.id)} key = {taskItem.id}>
                             {taskItem.description}
@@ -52,6 +58,8 @@ class Tasks extends Component {
                     />
                 </form> 
                 <button onClick = {this.addNewTask_h}></button>          
+
+                    */}
             </div>            
         );
 
@@ -66,7 +74,8 @@ class Tasks extends Component {
 // 2) NEXT !!!!
 const mapStateToProps = state => {
     return {
-        tasks: state.taskReducer.tasks   // WATCH this wiring to state
+        //tasks: state.taskReducer.tasks   // WATCH this wiring to state
+        tasks: state.tasks
     }
 }
 
@@ -74,4 +83,4 @@ export default connect(
     mapStateToProps,
     {addTask, toggleTask}
 
-)
+)(Tasks);
