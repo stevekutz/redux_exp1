@@ -23,18 +23,27 @@ h5 {
 .allDistinctState{
   border: 1px solid darkslateblue;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   width: 80%;
   margin: 0 auto;
 }
+
+.task_counter_Container{
+  border: 2px solid hotpink;
+  display: flex;
+  justify-content: space-around;
+
+}
+
 
 .tasksMainContainer {
   border: 1px solid darkblue;
   box-shadow: 0 4px 4px #cdc;
   display: flex;
   flex-direction: column;
-  width: 40%;
-}
+  width: 30%;
+ }
 
 .tasksMainContainer h6, h5{
   color: darkblue;
@@ -55,12 +64,12 @@ input{
   border: 1px solid red;
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
 
 }
 
 .counterContainer{
-  border: 10px solid royalblue;
+  border: 1px solid royalblue;
   display: flex;
   flex-direction: column;
   margin: 2px auto;

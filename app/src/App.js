@@ -21,18 +21,21 @@ function App() {
 
 
         <div className = 'allDistinctState'>
-          
-            <div className = 'tasksMainContainer'>
-              <h5> Tasks </h5>
-              <Tasks />
-            </div>
+            <h5> Unique state container </h5>
+            <div className = 'task_counter_Container' >
+            
+              <div className = 'tasksMainContainer'>
+                <h5> Tasks </h5>
+                <Tasks />
+              </div>
 
-            <div className = 'counterMainContainer'>
-              <h5> Counter </h5>
-              <Counter />
+              <div className = 'counterMainContainer'>
+                <h5> Counter </h5>
+                <Counter />
+              </div>
+  
             </div>
-          
-        
+            
         </div>
 
 
