@@ -2,9 +2,18 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {increment, decrement, reset} from '../actions/actionsCounter';
 
+
 class Counter extends Component {
     state = {
-        count: 0   // never seen
+        count: 1000   // never seen
+    }
+
+    resetZero = () => {
+        this.setState({
+            count: 0
+        })
+
+
     }
 
 
@@ -12,12 +21,13 @@ class Counter extends Component {
     render() {
         return (
             <div className = 'counterContainer'>
-                <h6> Counter value: {this.state.count} </h6>
+                <h6> Local count state: {this.state.count} </h6>
                 <h6> Redux Counter value: {this.props.countProp} </h6>
                 <div className = 'counterControls'>
                     <button onClick = {() => {this.props.increment() }}>incremement</button>
                     <button onClick = {() => {this.props.decrement() }}>decrement</button>
-                    <button>Reset</button>
+                    <button onClick = {() => {this.props.reset() }} >Reset</button>
+                    <button onClick = {this.resetZero}>reset to 0</button>
                 </div>
             </div>
         )
