@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {increment, decrement, reset} from '../actions/actionsCounter';
-import './views.css';
+import './counter.css';
 
 
 class Counter extends Component {
@@ -43,12 +43,13 @@ class Counter extends Component {
     render() {
         return (
             <div className = 'counterContainer'>
+                <h5>Counter</h5>
                 <h6> Local count state: {this.state.count} </h6>
                 <h6> Redux Counter value: {this.props.countProp} </h6>
                 <div className = 'counterControls'>
                     <div className = 'inc_dec'>
-                        <button onClick = {() => {this.props.increment() }}>incremement</button>
-                        <button onClick = {() => {this.props.decrement() }}>decrement</button>
+                        <button onClick = {() => {this.props.increment() }}>inc</button>
+                        <button onClick = {() => {this.props.decrement() }}>dec</button>
                     </div>
 
                     <div className = 'special_counter'>

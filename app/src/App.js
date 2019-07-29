@@ -29,7 +29,6 @@ function App() {
               </div>
 
               <div className = 'counterMainContainer'>
-                <h5> Counter </h5>
                 <Counter />
               </div>
   

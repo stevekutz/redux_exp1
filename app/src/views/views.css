@@ -1,5 +1,5 @@
 .sharedState{
-    border: 1px solid grey;
+    border: 10px solid grey;
     display: inline-block;
 
     width: 80%;
@@ -25,41 +25,16 @@ input, button{
     width: 50%;
     margin: 0 auto;
 }
+.tasksMainContainer{
+    border: 5px solid indigo;
+}
 
 .counterMainContainer{
-    border: 1px solid red;
+    border: 5px solid red;
     display: flex;
     flex-direction: column;
     width: 50%;
   
   }
   
-.counterContainer{
-    border: 1px solid royalblue;
-    display: flex;
-    flex-direction: column;
-    margin: 2px auto;
-    width: 80%;
-  }
-
-.counterControls{
-    border: 2px solid yellow;
-    display: flex;
-  }
-
-.inc_dec{
-    border: 1px solid grey;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-}
-
-.special_counter{
-    border: 1px solid green;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
 
