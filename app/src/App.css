@@ -53,6 +53,11 @@ input{
   border: 1px solid orangered;
 
 }
+
+.counterControls button {
+  width: 40%;
+}
+
 .fa-atom{
   padding-left: 4px;
 }

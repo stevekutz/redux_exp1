@@ -15,15 +15,11 @@ class Counter extends React.Component {
                 <div className = 'counterControls'>
                     <button >incremement</button>
                     <button>decrement</button>
+                    <button>Reset</button>
                 </div>
-
             </div>
         )
-
-
     }
-
-
 
 }
 
