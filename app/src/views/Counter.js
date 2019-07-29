@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {increment, decrement} from '../actions/actionsCounter';
 
-class Counter extends React.Component {
+class Counter extends Component {
     state = {
         count: 0   // never seen
     }
@@ -12,15 +12,15 @@ class Counter extends React.Component {
         return (
             <div className = 'counterContainer'>
                 <h6> Counter value: {this.state.count} </h6>
+                <h6> Redux Counter value: {this.props.countProp} </h6>
                 <div className = 'counterControls'>
-                    <button >incremement</button>
-                    <button>decrement</button>
+                    <button onClick = {() => {this.props.increment() }}>incremement</button>
+                    <button onClick = {() => {this.props.decrement() }}>decrement</button>
                     <button>Reset</button>
                 </div>
             </div>
         )
     }
-
 }
 
 
@@ -29,7 +29,8 @@ class Counter extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        countProp:  state.count
+        // countProp:  state.countVal
+        countProp: state.counterReducer.countVal
     }
 }
 
