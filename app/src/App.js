@@ -27,6 +27,7 @@ function App() {
           </div>
 
           <div className = 'counterContainer'>
+            <h5> Counter </h5>
             <Counter />
           </div>
         </div>

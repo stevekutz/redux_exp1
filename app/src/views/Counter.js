@@ -49,7 +49,7 @@ class Counter extends Component {
                     <button onClick = {() => {this.props.decrement() }}>decrement</button>
                     <button onClick = {() => {this.props.reset() }} >Reset to 10</button>
                     <button onClick = {this.resetTenTen}>reset local to 1010</button>
-                    <button onClick = {this.addTenSteps}>Add 10 in steps {this.props.countProp} </button>
+                    <button onClick = {this.addTenSteps}>Add 10 in steps {this.state.count} </button>
                 </div>
             </div>
         )
