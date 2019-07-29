@@ -26,7 +26,7 @@ function App() {
             <Tasks />
           </div>
 
-          <div className = 'counterContainer'>
+          <div className = 'counterMainContainer'>
             <h5> Counter </h5>
             <Counter />
           </div>

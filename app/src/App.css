@@ -16,12 +16,19 @@ h5 {
   margin: 1px;
 }
 
+.allDistinctState{
+  border: 1px solid darkslateblue;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .tasksMainContainer {
   border: 1px solid darkblue;
   box-shadow: 0 4px 4px #cdc;
   display: flex;
   flex-direction: column;
-  margin: 2px auto;
   width: 40%;
 }
 
@@ -40,9 +47,16 @@ input{
   outline-style: none;
 }
 
+.counterMainContainer{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+
+}
+
 .counterContainer{
-  border: 1px solid royalblue;
-  width: 60%;
+  border: 10px solid royalblue;
   display: flex;
   flex-direction: column;
   margin: 2px auto;
