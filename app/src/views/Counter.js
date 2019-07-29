@@ -5,18 +5,39 @@ import {increment, decrement, reset} from '../actions/actionsCounter';
 
 class Counter extends Component {
     state = {
-        count: 1000   // never seen
+        count: 1010   
     }
 
-    resetZero = () => {
+    resetTenTen = () => {
         this.setState({
-            count: 0
+            count: 1010,
         })
-
-
     }
 
+    addTenSteps = () => {
+        
+        for(let i = 0; i < 10; i++){
+//            this.setState({count: this.props.countProp})
+/*
+            this.setState((prevState, props) => ({
+                count: prevState.count + 1
+            })  )
+*/
+/* 
+            setTimeout( () =>  (
+                this.props.increment(),
+                this.setState((prevState, props) => ({
+                    count: prevState.count + 1
+                })  )
+                ), 2000 );  
+*/               
+                setTimeout( () => this.props.increment(), 1000);
 
+                this.setState((prevState, props) => ({
+                    count: prevState.count + 1
+                })  )
+        }
+    }
 
     render() {
         return (
@@ -26,8 +47,9 @@ class Counter extends Component {
                 <div className = 'counterControls'>
                     <button onClick = {() => {this.props.increment() }}>incremement</button>
                     <button onClick = {() => {this.props.decrement() }}>decrement</button>
-                    <button onClick = {() => {this.props.reset() }} >Reset</button>
-                    <button onClick = {this.resetZero}>reset to 0</button>
+                    <button onClick = {() => {this.props.reset() }} >Reset to 10</button>
+                    <button onClick = {this.resetTenTen}>reset local to 1010</button>
+                    <button onClick = {this.addTenSteps}>Add 10 in steps {this.props.countProp} </button>
                 </div>
             </div>
         )
