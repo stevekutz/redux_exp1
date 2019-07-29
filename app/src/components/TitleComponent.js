@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import './titleFC.css';
 
 const TitleComponent = (props) => {
     return (
-        <div>
+        <div className = 'titleFC_Container'>
             <h6> <span>FC Shared state</span> {props.title}</h6>
         </div>
 

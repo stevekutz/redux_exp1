@@ -3,7 +3,7 @@
     display: inline-block;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     box-shadow: 0 2px 2px #ccc;
     padding: 4px;
     margin: 2px auto;
@@ -23,7 +23,7 @@ h6 span {
 }
 
 input, button{
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
 }
 .tasksMainContainer{
