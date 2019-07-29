@@ -44,8 +44,8 @@ class Counter extends Component {
         return (
             <div className = 'counterContainer'>
                 <h5>Counter</h5>
-                <h6> Local count state: {this.state.count} </h6>
-                <h6> Redux Counter value: {this.props.countProp} </h6>
+                <h6> <span> Local count state: </span> {this.state.count} </h6>
+                <h6> <span> Redux Counter value: </span> {this.props.countProp} </h6>
                 <div className = 'counterControls'>
                     <div className = 'inc_dec'>
                         <button onClick = {() => {this.props.increment() }}>inc</button>
@@ -55,7 +55,7 @@ class Counter extends Component {
                     <div className = 'special_counter'>
                         <button onClick = {() => {this.props.reset() }} >Reset to 10</button>
                         <button onClick = {this.resetTenTen}>reset local to 1010</button>
-                        <button onClick = {this.addTenSteps}>Add 10 in steps {this.state.count} </button>
+                        <button onClick = {this.addTenSteps}>Add 10 in dealyed steps {this.state.count} </button>
                     </div>
                 </div>
             </div>

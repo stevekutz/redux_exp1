@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
         <div className = "allSharedState">
-          <h4>All have Shared State</h4>
+          <h4>All shared Same State</h4>
           <Title />
           <Title />
           <TitleView />
@@ -21,7 +21,7 @@ function App() {
 
 
         <div className = 'allDistinctState'>
-            <h4> Each has Unique State</h4>
+            <h4> Each with Unique State</h4>
             <div className = 'task_counter_Container' >
             
               <div className = 'tasksMainContainer'>

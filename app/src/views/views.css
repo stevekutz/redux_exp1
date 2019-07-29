@@ -1,7 +1,8 @@
 .sharedState{
-    border: 10px solid grey;
+    border: 1px solid grey;
     display: inline-block;
-
+    display: flex;
+    flex-direction: column;
     width: 80%;
     box-shadow: 0 2px 2px #ccc;
     padding: 4px;

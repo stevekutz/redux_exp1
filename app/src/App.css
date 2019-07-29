@@ -1,14 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+#root{
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
 .App {
   text-align: center;
+
+
 }
 
 .allSharedState{
   border: 1px solid darkred;
-  display: inline-block;
+/*  display: inline-block; */
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 2px 2px #ccc;
   padding: 5px;
-  margin: 3px;
-  height: 40%;
+  margin: 3px auto;
+  width: 80%;
+ /* height: 40%; */
 }
 
 h4{
@@ -20,8 +36,8 @@ h4{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+
 }
 
 .task_counter_Container{
@@ -32,7 +48,7 @@ h4{
 
 .tasksMainContainer {
   border: 1px solid darkblue;
-  box-shadow: 0 4px 4px #cdc;
+  
   display: flex;
   flex-direction: column;
   width: 30%;
