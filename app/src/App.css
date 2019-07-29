@@ -31,7 +31,7 @@ h5 {
 
 .titleViewContainer{
   border: 2px solid green;
-  margin: 1px auto;;
+  margin: 1px auto;
 
 
 }
@@ -40,6 +40,19 @@ input{
   outline-style: none;
 }
 
+.counterContainer{
+  border: 1px solid royalblue;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 2px auto;
+}
+
+
+.counterControls{
+  border: 1px solid orangered;
+
+}
 .fa-atom{
   padding-left: 4px;
 }

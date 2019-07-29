@@ -4,6 +4,7 @@ import './App.css';
 import Title from './views/Title';
 import TitleView from './views/TitleView';
 import TitleComponent from './components/TitleComponent';
+import Counter from './views/Counter';
 
 import Tasks from './views/Tasks';
 
@@ -18,11 +19,18 @@ function App() {
           <TitleComponent />
         </div>
 
-        <div className = 'tasksMainContainer'>
-          <h5> Tasks </h5>
-          <Tasks />
-        
+
+        <div className = 'allDistinctState'>
+          <div className = 'tasksMainContainer'>
+            <h5> Tasks </h5>
+            <Tasks />
+          </div>
+
+          <div className = 'counterContainer'>
+            <Counter />
+          </div>
         </div>
+
 
    
     </div>

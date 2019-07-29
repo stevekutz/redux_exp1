@@ -30,8 +30,6 @@ class Tasks extends Component {
         this.props.toggleTask(id);
     }
 
-// {this.props.tasks.map((taskItem, index) => (
-
     // 3) 
     render() {
 

@@ -198,29 +198,117 @@
 
 
 
-## Part 2) Demonstrate State between Task List components
+## Part 2) Demonstrate State used with Task List components
+
+1) Define imports for `Tasks` component & `action creators`
+    ```
+    import React, {Component} from 'react';
+    import {connect} from 'react-redux';
+
+    import {addTask, toggleTask} from '../actions/actionsTasks';
+
+    ````
+2) Define `action types` and actual `action creaators`
+    ````
+    export const ADD_TASK = 'ADD_TASK';
+    export const TOGGLE_COMPLETE = 'TOGGLE_COMPLETE';
+
+    // addTask, toggleTask
+    export const addTask = someNewTask => {   // random name
+        console.log(' someNewTake ', someNewTask);
+
+        return {
+            type: ADD_TASK,
+            payload: someNewTask //   random name
+        };
+    };
 
 
+    export const toggleTask = id => {
+        return {
+            type: TOGGLE_COMPLETE,
+            payload: id
+        }
+    } 
+    ````
+3) Define `reducers`
+    ````
+    // export const TOGGLE_COMPLETE = 'TOGGLE_COMPLETE';
 
+    import {ADD_TASK, TOGGLE_COMPLETE}   from '../actions/actionsTasks';
 
-1) Set up the `store` (obj that holds state tree, e.g. app data). <Provider/> wraps entire application and `store` is passed into it.
-    - Add to index.js
-        ````
-        `import {createStore} from 'redux';`
-        `import {Provider} from 'react-redux';`
-        `import rootReducer from './reducers/reducer';`
-        `const store = createStore(rootReducer);`
-        ````
-        - `Use this method to allow debugging of store`
-        ````
-        const store = createStore(
-        rootReducer,
-            window.__REDUX_DEVTOOLS_EXTENSION__ &&  window.__REDUX_DEVTOOLS_EXTENSION__()  
-        );
-        ````
+    const initialState = {
+        tasks: [
+            {description: 'write code', completed: false, id: 1},
+            {description: 'debug code', completed: true, id: 2},
+        ]
+    }
 
-    - wrap `<App/> in <Provider />`
+    function taskReducer(state = initialState, action) {
+        switch(action.type) {
+            case ADD_TASK:
+                return {
+                    ...state,
+                    tasks: [
+                        ...state.tasks,
+                        {description: action.payload, completed: false, id: Date.now() }
+                    ]    
+                }
+            
+            case TOGGLE_COMPLETE:
+                return {
+                    ...state,
+                    tasks: state.tasks.map(item => {
+                        if(item.id === action.payload) {
+                            return {
+                                ...item,
+                                completed: !item.completed
+                            }
+                        } else {
+                            return item;
+                        }         
+                    })
+                }
 
+            default: 
+                return state;
+        }
+    }
+
+    export default taskReducer;
+    ````
+4) Add to bottom of `Tasks` component and then complete remainder of component
+    ````
+    const mapStateToProps = state => {
+        return {
+            //tasks: state.taskReducer.tasks   // WATCH this wiring to state
+            tasks: state.tasks.tasks
+
+        }
+    }
+
+    export default connect(
+        mapStateToProps,
+        {addTask, toggleTask}
+
+    )(Tasks);
+    ````
+5) To use `Font Awesome` icons, include the following in `public/index.html`
+    ````
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous"
+        />
+    ````    
+## Part 3) Demonstrate State used with Counter component
+1) Define imports for `Counter` component & `action creators`
+    ```
+    import React, {Component} from 'react';
+    import {connect} from 'react-redux';
+
+    import {addTask, toggleTask} from '../actions/actionsTasks';
 
 
 
