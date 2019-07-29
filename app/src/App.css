@@ -15,6 +15,10 @@ h5 {
   color: darkred;
   margin: 1px;
 }
+.stack {
+  display: flex;
+  flex-direction: column;
+}
 
 .allDistinctState{
   border: 1px solid darkslateblue;

@@ -17,12 +17,22 @@ class Tasks extends Component {
     }
 
     addNewTask_h = ev => {
-        ev.preventDefault();
-        this.props.addTask(this.state.newTask);
 
-        this.setState({
-            newTask: ''
-        })
+        if(this.state.newTask !== ''){
+            ev.preventDefault();
+            this.props.addTask(this.state.newTask);
+
+            this.setState({
+                newTask: ''
+            })
+
+
+
+
+
+        }
+
+
 
     }
 
