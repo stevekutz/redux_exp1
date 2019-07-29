@@ -1,5 +1,6 @@
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
+export const RESET = 'RESET';
 
 // import {increment, decrement}
 
@@ -17,3 +18,10 @@ export const decrement = () => {
         payload: null
     }
 };
+
+export const reset = () => {
+    return {
+        type: RESET,
+        payload: null
+    }
+}
