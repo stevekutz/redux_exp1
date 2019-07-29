@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
 import {addTask, toggleTask} from '../actions/actionsTasks';
+import './tasks.css';
 
 // 1) 
 class Tasks extends Component {
@@ -25,15 +25,7 @@ class Tasks extends Component {
             this.setState({
                 newTask: ''
             })
-
-
-
-
-
         }
-
-
-
     }
 
     toggleTask_h = id => {
@@ -49,26 +41,28 @@ class Tasks extends Component {
             <div>    
 
                 <div className = 'taskListContainer'>
-
-                {this.props.tasks.map((taskItem, index) => (
-         
-                        <h6 onClick = { () => this.toggleTask_h(taskItem.id)} key = {taskItem.id}>
-                            {taskItem.description}
-                            {taskItem.completed &&     <i className="fas fa-atom" />}
-                        </h6>
-                    ))}
-                </div> 
-                <form>
-                    <input 
-                        type = 'text'
-                        value = {this.state.newTask}
-                        onChange = {this.changeHandler}
-                        placeholder = 'add something'
-                    />
-                </form> 
-                <button onClick = {this.addNewTask_h}>Add Task</button>          
-
- 
+                     <h5> Tasks </h5>   
+                    {this.props.tasks.map((taskItem, index) => (
+            
+                            <h6 
+                                className= 'tasksItems'
+                                onClick = { () => this.toggleTask_h(taskItem.id)} key = {taskItem.id}
+                            >
+                                {taskItem.description}
+                                {taskItem.completed &&     <i className="fas fa-atom" />}
+                            </h6>
+                        ))}
+                     
+                    <form>
+                        <input 
+                            type = 'text'
+                            value = {this.state.newTask}
+                            onChange = {this.changeHandler}
+                            placeholder = 'add something'
+                        />
+                    </form> 
+                    <button onClick = {this.addNewTask_h}>Add Task</button>          
+                </div>
             </div>            
         );
               

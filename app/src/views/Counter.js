@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {increment, decrement, reset} from '../actions/actionsCounter';
+import './views.css';
 
 
 class Counter extends Component {
@@ -45,11 +46,16 @@ class Counter extends Component {
                 <h6> Local count state: {this.state.count} </h6>
                 <h6> Redux Counter value: {this.props.countProp} </h6>
                 <div className = 'counterControls'>
-                    <button onClick = {() => {this.props.increment() }}>incremement</button>
-                    <button onClick = {() => {this.props.decrement() }}>decrement</button>
-                    <button onClick = {() => {this.props.reset() }} >Reset to 10</button>
-                    <button onClick = {this.resetTenTen}>reset local to 1010</button>
-                    <button onClick = {this.addTenSteps}>Add 10 in steps {this.state.count} </button>
+                    <div className = 'inc_dec'>
+                        <button onClick = {() => {this.props.increment() }}>incremement</button>
+                        <button onClick = {() => {this.props.decrement() }}>decrement</button>
+                    </div>
+
+                    <div className = 'special_counter'>
+                        <button onClick = {() => {this.props.reset() }} >Reset to 10</button>
+                        <button onClick = {this.resetTenTen}>reset local to 1010</button>
+                        <button onClick = {this.addTenSteps}>Add 10 in steps {this.state.count} </button>
+                    </div>
                 </div>
             </div>
         )

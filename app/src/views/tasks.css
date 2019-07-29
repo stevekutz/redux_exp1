@@ -1,0 +1,12 @@
+.taskListContainer{
+    border: 3px solid violet;
+}
+
+.taskListContainer h5{
+    margin: 1px;
+    padding: 0px;
+}
+
+.tasksItems{
+    color: pink;
+}

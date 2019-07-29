@@ -11,13 +11,8 @@
   height: 40%;
 }
 
-h5 {
-  color: darkred;
+h4{
   margin: 1px;
-}
-.stack {
-  display: flex;
-  flex-direction: column;
 }
 
 .allDistinctState{
@@ -33,9 +28,7 @@ h5 {
   border: 2px solid hotpink;
   display: flex;
   justify-content: space-around;
-
 }
-
 
 .tasksMainContainer {
   border: 1px solid darkblue;
@@ -43,46 +36,17 @@ h5 {
   display: flex;
   flex-direction: column;
   width: 30%;
- }
-
-.tasksMainContainer h6, h5{
-  color: darkblue;
 }
+
 
 .titleViewContainer{
   border: 2px solid green;
   margin: 1px auto;
 
-
 }
 
 input{
   outline-style: none;
-}
-
-.counterMainContainer{
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-
-}
-
-.counterContainer{
-  border: 1px solid royalblue;
-  display: flex;
-  flex-direction: column;
-  margin: 2px auto;
-}
-
-
-.counterControls{
-  border: 1px solid orangered;
-
-}
-
-.counterControls button {
-  width: 40%;
 }
 
 .fa-atom{
